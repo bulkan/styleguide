@@ -13,7 +13,10 @@ const IP = process.env.NODE_IP || '0.0.0.0';
 
 module.exports = {
 	config: function( options = {} ) {
-		let { uiLibrary, demos } = options;
+		let { uiLibrary, demos, title, nav_title } = options;
+
+		app.locals.title = title || 'Aconex Living Styleguide';
+		app.locals.nav_title = nav_title || 'Aconex Pattern Library';
 
 		if ( !uiLibrary ) {
 			throw new Error( 'STYLEGUIDE: UI library path must be configured.' );
