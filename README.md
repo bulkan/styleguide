@@ -11,7 +11,7 @@ Use the starter template to get an idea of the basic project setup for configuri
 1. Install `styleguide` as a dependency in your project.
 
   ```
-  npm install --save github:Aconex/styleguide#v2.0.0
+  npm install --save @aconex/styleguide
   ```
 
 2. Configure the styleguide's options:
