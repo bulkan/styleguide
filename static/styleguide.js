@@ -7,11 +7,12 @@ window.styleguide = {
 		var iframes = document.querySelectorAll( 'iframe' );
 		iframes.forEach( function( iframe ) {
 			iframe.contentWindow.eval(
-				'window.onload = function() {' +
+				'function createScript() {' +
 				'	var script = document.createElement("script");' +
 				'	script.src = "/static/iframeResizer.contentWindow.min.js";' +
 				'	document.body.appendChild(script);' +
-				'};'
+				'}' +
+				'setTimeout(createScript, 600);'
 			);
 		} );
 	},

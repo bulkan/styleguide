@@ -1,6 +1,6 @@
 {
   "name": "styleguide",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "Aconex Core Styleguide",
   "author": "ui@aconex.com",
   "license": "UNLICENSED",
@@ -24,7 +24,6 @@
     "cheerio": "0.22.x",
     "express": "4.14.x",
     "express-handlebars": "3.0.x",
-    "findit2": "2.2.x",
     "markdown-it": "7.0.x",
     "markdown-it-toc-and-anchor": "4.1.x",
     "morgan": "1.7.x"

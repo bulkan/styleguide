@@ -11,7 +11,7 @@ Use the starter template to get an idea of the basic project setup for configuri
 1. Install `styleguide` as a dependency in your project.
 
   ```
-  npm install --save github:Aconex/styleguide
+  npm install --save github:Aconex/styleguide#v2.0.0
   ```
 
 2. Configure the styleguide's options:
@@ -25,26 +25,53 @@ Use the starter template to get an idea of the basic project setup for configuri
 
 3. Create styleguide content.
 
-  To generate the styleguide's navigation and pages, it looks for files in your UI library that have filenames ending with `.guide.md`. Each one of these will appear as a navigable item in the styleguide's menu.
+  The documentation for a component is written in a `guide.md` file. There should be one guide file for each component.
 
-  For example, given the following folder structure:
+  To generate the styleguide's navigation, it looks for a `navigation.guide.json` file. Take the following example of a folder and file structure.
+
+  #### Folder structure
 
   ```
   src
   |
-  +-- basics
-       |
-       |-- button.guide.md
-       +-- button.demo.html
+  +-- components
+  |    |
+  |    +-- calendar
+  |    |    |-- calendar.guide.md
+  |    |    +-- calendar.demo.html
+  |    |
+  |    +-- datepicker
+  |         |-- datepicker.guide.md
+  |         +-- datepicker.demo.html
+  |
+  +-- navigation.guide.json
   ```
 
-  A _Button_ link will appear under the _Basics_ category in the styleguide's menu, and the contents of `button.guide.md` will be rendered when the link is clicked. Inside `button.guide.md`, you can embed the contents of `button.demo.html` by writing `--$ button.demo $--`.
+  #### navigation.guide.json:
+
+  ```
+  {
+    "sections": [
+      {
+        "title": "Components",
+        "items": [
+          { "title": "Calendar", "path": "components/calendar" },
+          { "title": "Datepicker", "path": "components/datepicker" }
+        ]
+      }
+    ]
+  }
+  ```
+
+  In this example, the navigation menu will contain a Components section with 2 items in it: Calendar and Datepicker.
+
+  The contents of `guide.md` file will be rendered when navigating to a particular component. Inside the `guide.md`, you can embed the contents of a `demo.html`. For example, in `calendar.guide.md` you can insert the calendar demo with `--$ calendar.demo $--`.
 
 ## Publishing
 
 The styleguide exposes an executable `styleguide-publish` to simplify publishing to RHCloud. The simplest way to use this is to add a script to your UI library's `package.json`.
 
-This example will prepare files from the `src` folder of your UI library for publishing to an RHCloud app named `sg3`. The files will be output to a  `publish` folder, ready for pushing to RHCloud.
+This example will prepare files from the `src` folder of your UI library for publishing to an RHCloud app named `sg3`. The files will be output to a `publish` folder, ready for pushing to RHCloud.
 
 ```
 "scripts": {

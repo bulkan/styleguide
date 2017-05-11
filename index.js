@@ -51,8 +51,8 @@ module.exports = {
 			} ) )
 			.use( logger( 'dev' ) )
 			.use( '/static', express.static( __dirname + '/static' ) )
-			.use( '/styleguide/:category/:id', pageHandler )
-			.use( '/', pageHandler )
+			.get( '/styleguide/*', pageHandler )
+			.get( '/', pageHandler )
 			.listen( PORT, IP, () => process.stdout.write( `STYLEGUIDE: Running at http:\/\/${IP}:${PORT}\n` ) );
 
 		return this;

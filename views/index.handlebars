@@ -5,14 +5,14 @@
 			<a href="/">{{{nav_title}}}</a>
 		</div>
 		<ul class="styleguide-nav">
-			{{#each categories}}
-				<li>{{id}}
+			{{#each menu.sections}}
+				<li>{{title}}
 					<ul>
 						{{#each items}}
 							{{#if active}}
-								<li><a class="{{#if active}}active{{/if}}">{{id}}</a></li>
+								<li><a class="active">{{title}}</a></li>
 							{{else}}
-								<li><a href="{{url}}">{{id}}</a></li>
+								<li><a href="{{url}}">{{title}}</a></li>
 							{{/if}}
 						{{/each}}
 					</ul>
