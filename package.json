@@ -1,13 +1,12 @@
 {
-  "name": "styleguide",
+  "name": "@aconex/styleguide",
   "version": "2.0.1",
   "description": "Aconex Core Styleguide",
   "author": "ui@aconex.com",
   "license": "UNLICENSED",
-  "private": true,
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:Aconex/styleguide.git"
+    "url": "git+ssh://git@github.com/Aconex/styleguide.git"
   },
   "main": "index.js",
   "bin": {
@@ -33,5 +32,9 @@
     "eslint": "3.4.x",
     "eslint-config-aconex": "1.0.x",
     "fs-extra": "0.30.x"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Aconex/styleguide/issues"
+  },
+  "homepage": "https://github.com/Aconex/styleguide#readme"
 }
